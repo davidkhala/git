@@ -46,5 +46,11 @@ update-clone() {
 	fi
 	echo "${dirname}/${projectName}"
 }
+set-remote(){
+	local remote=${1:-origin}
+ 	local branch=$2 # TODO get current branch name
+	git branch --set-upstream-to=$1/master
+	
 
+}
 $@
