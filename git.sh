@@ -12,6 +12,10 @@ setup() {
 	git config --global user.email "david-khala@hotmail.com"
 	git config --global pull.rebase true
 }
+sync() {
+	local upstreamBranch=$1
+	git rebase $upstreamBranch $2
+}
 
 # Git clone or update
 update-clone() {
