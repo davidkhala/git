@@ -13,9 +13,10 @@ setup() {
 	git config --global pull.rebase true
 }
 sync() {
-	local upstreamBranch=${1:-origin}
+	local remote=${1:-origin}
 	local localBranch=${2:-main}
-	git rebase -X theirs $upstreamBranch $localBranch
+	git fetch $remote
+	git rebase -X theirs $remote $localBranch
 }
 
 # Git clone or update
