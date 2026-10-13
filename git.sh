@@ -16,7 +16,8 @@ sync() {
 	local remote=${1:-origin}
 	local localBranch=${2:-main}
 	git fetch $remote
-	git rebase -X theirs $remote $localBranch
+	git reset --hard $remote/$localBranch
+	
 }
 
 # Git clone or update
