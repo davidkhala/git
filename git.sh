@@ -15,7 +15,7 @@ setup() {
 sync() {
 	local upstreamBranch=${1:-origin}
 	local localBranch=${2:-main}
-	git rebase $upstreamBranch $localBranch
+	git rebase -X theirs $upstreamBranch $localBranch
 }
 
 # Git clone or update
